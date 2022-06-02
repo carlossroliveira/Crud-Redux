@@ -1,4 +1,11 @@
+// -------------------------------------------------
+// Packages
+// -------------------------------------------------
 import React from 'react';
+import { Link } from 'react-router-dom';
+// -------------------------------------------------
+// Styles
+// -------------------------------------------------
 import styles from './aside.module.scss';
 
 export const Aside = () => {
@@ -10,8 +17,11 @@ export const Aside = () => {
       </h1>
 
       <div>
-        <a href="">Dash</a> <br />
-        <a href="">editar</a>
+        <Link to="/">Dashboard</Link>
+        <br />
+        <br />
+        <br />
+        <Link to="/create">create</Link>
       </div>
     </div>
   );

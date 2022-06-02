@@ -3,23 +3,30 @@
 // -------------------------------------------------
 import React from 'react';
 // -------------------------------------------------
-// Styles
+// Components
 // -------------------------------------------------
-import styles from './layout.module.scss';
 import { Aside } from './part/Aside';
 import { Content } from './part/Content';
 import { Header } from './part/Header';
 import { StyleOne } from './part/StyleOne';
 import { StyleTwo } from './part/StyleTwo';
+// -------------------------------------------------
+// Styles
+// -------------------------------------------------
+import styles from './layout.module.scss';
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
+import { ILayoutProps } from './types';
 
-export const Layout = () => {
+export const Layout = ({ children }: ILayoutProps) => {
   return (
     <div className={styles.container}>
       <StyleOne />
       <StyleTwo />
       <Aside />
       <Header />
-      <Content />
+      <Content>{children}</Content>
     </div>
   );
 };
