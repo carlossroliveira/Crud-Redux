@@ -1,5 +1,6 @@
+@import '../../../../styles/variables';
 .container {
-  background-color: yellowgreen;
+  background-color: $background--color-1;
 
   grid-area: header;
 }

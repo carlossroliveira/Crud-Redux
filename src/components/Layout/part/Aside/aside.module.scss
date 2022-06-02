@@ -1,5 +1,19 @@
+@import '../../../../styles/variables';
 .container {
-  background-color: #84e;
+  background-color: $background--color-4;
 
   grid-area: aside;
+
+  .container__title {
+    margin-top: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: $background--color-5;
+
+    .container__title__span {
+      font-weight: 700;
+      color: $background--color-2;
+    }
+  }
 }
