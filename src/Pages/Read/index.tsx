@@ -6,8 +6,8 @@ import React from 'react';
 // Styles
 // -------------------------------------------------
 
-export const Dashboard = () => {
+export const Read = () => {
   return (
-    <div>dashboard</div>
+    <div>Read</div>
   )
 }

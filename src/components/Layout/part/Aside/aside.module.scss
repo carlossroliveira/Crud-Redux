@@ -1,19 +1,48 @@
 @import '../../../../styles/variables';
 .container {
-  background-color: $background--color-4;
-
   grid-area: aside;
+  background-color: $background--color-4;
 
   .container__title {
     margin-top: 2rem;
     text-align: center;
     letter-spacing: 1px;
-
     color: $background--color-5;
 
     .container__title__span {
       font-weight: 700;
       color: $background--color-2;
+    }
+  }
+
+  .container__section {
+    margin-top: 5rem;
+
+    .container__div__main {
+      a {
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: $background--color-7;
+      }
+
+      svg {
+        font-size: 20px;
+        margin-right: 5px;
+        color: $background--color-5;
+      }
+    }
+
+    .container__div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 15px 15px 15px 50px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $background--color-3;
+      }
     }
   }
 }
