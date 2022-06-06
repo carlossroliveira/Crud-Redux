@@ -1,5 +1,5 @@
-import * as types from '../types';
+import { INCREMENTAR } from '../types';
 
 export const incrementar = () => {
-  return { type: types.INCREMENTAR };
+  return { type: INCREMENTAR };
 };

@@ -3,6 +3,7 @@
 // -------------------------------------------------
 import React from 'react';
 import { useSelector } from 'react-redux'
+import { State } from '../../../../store'
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------
@@ -10,7 +11,7 @@ import styles from './styleOne.module.scss';
 
 export const StyleOne = () => {
 
-  const state = useSelector((state)=> state.reducer);
+  const state = useSelector((state: State)=> state.reducer);
 
 
 

@@ -1,8 +1,10 @@
 import { combineReducers, legacy_createStore as createStore } from 'redux';
-import { reducer } from './reducers/reducer'
+import { reducer } from './reducers/reducer';
 
-export const store = createStore(
-  combineReducers({
-    reducer,
-  }),
-);
+const rootReducer = combineReducers({
+  reducer,
+});
+
+export type State = ReturnType<typeof rootReducer>;
+
+export const store = createStore(rootReducer);

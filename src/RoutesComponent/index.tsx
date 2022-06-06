@@ -6,11 +6,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // -------------------------------------------------
 // Components
 // -------------------------------------------------
-import { Create } from '../Pages/Create';
+import { Create } from '../pages/Create';
 import { Layout } from '../components/Layout';
-import { Read } from '../Pages/Read';
-import { Update } from '../Pages/Update';
-import { Delete } from '../Pages/Delete';
+import { Read } from '../pages/Read';
+import { Update } from '../pages/Update';
+import { Delete } from '../pages/Delete';
 
 export const RoutesComponent = () => {
   return (
