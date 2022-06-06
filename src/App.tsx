@@ -5,7 +5,7 @@ import React from 'react';
 // -------------------------------------------------
 // Components
 // -------------------------------------------------
-import { RoutesComponent } from './RoutesComponent';
+import { RoutesComponent } from './routesComponent';
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------

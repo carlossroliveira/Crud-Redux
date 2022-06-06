@@ -10,7 +10,7 @@ import styles from './styleOne.module.scss';
 
 export const StyleOne = () => {
 
-  const state = useSelector((state)=> state)
+  const state = useSelector((state)=> state.reducer);
 
 
 
