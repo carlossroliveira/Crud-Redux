@@ -2,22 +2,32 @@
 // Packages
 // -------------------------------------------------
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import img from '../../../../assets/user.jpg';
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------
 import styles from './header.module.scss';
-import { incrementar } from '../../../../store/actions/function';
 
 export const Header = () => {
-  const dispacth = useDispatch();
-
-  const kk = () => {
-    dispacth(incrementar());
-  };
   return (
-    <div className={styles.container}>
-      <button onClick={kk}>aa</button>
-    </div>
+    <section className={styles.container}>
+      <div className={styles.container__first}>
+        <div className={`${styles.formGroup} ${styles.field}`}>
+          <input
+            type="input"
+            className={styles.formField}
+            placeholder="Search person"
+            name="name"
+          />
+          <label htmlFor="name" className={styles.formLabel}>
+            Search person
+          </label>
+        </div>
+      </div>
+      <div className={styles.container__second}>
+        <img src={img} alt="Image" />
+        <div>Carlos</div>
+      </div>
+    </section>
   );
 };

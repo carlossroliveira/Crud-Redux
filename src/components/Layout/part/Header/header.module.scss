@@ -1,6 +1,86 @@
 @import '../../../../styles/variables';
 .container {
+  grid-area: header;
   background-color: $background--color-1;
 
-  grid-area: header;
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .container__first {
+    position: relative;
+    .formGroup {
+      position: relative;
+      padding: 20px 0 0;
+    }
+    .formField {
+      z-index: 1;
+      border: 0;
+      outline: 0;
+      width: 100%;
+      padding: 7px 0;
+      font-size: 1.3rem;
+      position: inherit;
+      background: transparent;
+      color: $background--color-7;
+      transition: border-color 0.2s;
+      border-bottom: 2px solid $background--color-7;
+
+      &::placeholder {
+        color: transparent;
+      }
+      &:placeholder-shown ~ .formLabel {
+        cursor: text;
+        top: 20px;
+        font-size: 1.3rem;
+      }
+    }
+    .formLabel {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $background--color-7;
+    }
+    .formField:focus {
+      ~ .formLabel {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $background--color-5;
+        font-weight: 700;
+      }
+      padding-bottom: 6px;
+      font-weight: 700;
+      border-width: 3px;
+      border-image: linear-gradient(
+        to right,
+        $background--color-5,
+        $background--color-7
+      );
+      border-image-slice: 1;
+    }
+  }
+
+  .container__second {
+    display: flex;
+    align-items: center;
+
+    padding: 0px 45px;
+    background-color: $background--color-5;
+
+    img {
+      width: 50px;
+    }
+
+    div {
+      margin-left: 1rem;
+      color: $background--color-1;
+    }
+  }
 }
