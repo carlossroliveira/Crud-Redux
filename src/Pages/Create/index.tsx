@@ -13,8 +13,8 @@ import { NamePage } from '../../components/NamePage';
 export const Create = () => {
   return (
     <div>
-        <NamePage title="Create" />
-        Create
+      <NamePage title="Create" />
+      Create
     </div>
   );
 };
