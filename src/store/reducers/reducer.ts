@@ -1,11 +1,13 @@
-import { INCREMENTAR } from '../types';
+import { mock } from '../mock';
+import { create_Person, initialActionType } from '../types';
 
-export const reducer = (state = 0, action: any) => {
+export function reducer(state = mock, action: initialActionType) {
   switch (action.type) {
-    case INCREMENTAR:
-      return state + 1;
-
+    case create_Person:
+      return {
+        state: [...state.person, action.person],
+      };
     default:
       return state;
   }
-};
+}

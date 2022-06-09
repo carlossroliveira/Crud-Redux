@@ -11,7 +11,6 @@ import styles from './styleOne.module.scss';
 
 export const StyleOne = () => {
 
-  const state = useSelector((state: State)=> state.reducer);
 
 
 
@@ -22,7 +21,6 @@ export const StyleOne = () => {
       <h1 className={styles.container__title}>
         &copy; {currentYear} | Carlos Oliveira
       </h1>
-      valor:{state}
       </>
     </div>
   );
