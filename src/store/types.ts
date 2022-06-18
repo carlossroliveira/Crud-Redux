@@ -1,18 +1,40 @@
+// -------------------------------------------------
+// RootReducer
+// -------------------------------------------------
+import { rootReducer } from '.';
+
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
 export interface IMockData {
   person: {
-    cpf: string;
-    name: string;
-    city: string;
-    state: string;
-    id: string;
+    cpf?: string;
+    name?: string;
+    city?: string;
+    state?: string;
+    id?: string;
   }[];
 }
 
-export const create_Person = 'create_Person';
-
-export interface createPerson {
-  type: typeof create_Person;
-  person: IMockData;
+export enum ActionType {
+  CREATE_PERSON = 'create_Person',
+  EDIT_PERSON = 'edit_Person',
+  DELETE_PERSON = 'delete_person',
 }
 
-export type initialActionType = createPerson;
+export interface ICreatePerson {
+  type: typeof ActionType.CREATE_PERSON;
+  payload: IMockData;
+}
+export interface IEditPerson {
+  type: typeof ActionType.EDIT_PERSON;
+  payload: IMockData;
+}
+export interface IDeletePerson {
+  type: typeof ActionType.DELETE_PERSON;
+  payload: IMockData;
+}
+
+export type InitialActionType = ICreatePerson | IEditPerson | IDeletePerson;
+
+export type RootStateType = ReturnType<typeof rootReducer>;

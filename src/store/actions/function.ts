@@ -1,9 +1,22 @@
-import { create_Person, IMockData } from '../types';
-import * as actionTypes from '../types';
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
+import { Dispatch } from 'redux';
 
-/* export const createPerson = () => {
-  return { type: create_Person };
-}; */
+import { ActionType, IMockData, InitialActionType } from '../types';
+
+export const createPerson = () => {
+  return { type: ActionType.CREATE_PERSON };
+};
+
+export const create = (value: IMockData) => {
+  return (dispatch: Dispatch<InitialActionType>) => {
+    dispatch({
+      type: ActionType.CREATE_PERSON,
+      payload: value,
+    });
+  };
+};
 
 /* export function createPerson(person: IMockData) {
   const action: actionTypes.createPerson = {
@@ -13,10 +26,11 @@ import * as actionTypes from '../types';
   return (dispatch: AppDispatch) => dispatch(action);
 }
  */
-export function createPerson(person: any) {
+/* export function createPerson(person: any) {
   const action: any = {
-    type: create_Person,
+    type: CREATE_PERSON,
     person,
   };
   return action;
 }
+ */

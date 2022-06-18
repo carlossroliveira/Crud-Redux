@@ -1,8 +1,9 @@
 // -------------------------------------------------
 // Packages
 // -------------------------------------------------
-import React from 'react';
+import React, { FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { FiEdit, FiSave, FiTrash2 } from 'react-icons/fi';
 // -------------------------------------------------
 // Components
@@ -12,32 +13,45 @@ import { NamePage } from '../../components/NamePage';
 // Styles
 // -------------------------------------------------
 import styles from './read.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { createPerson } from '../../store/actions/function';
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
+import { IMockData, InitialActionType, RootStateType } from '../../store/types';
+
+import { useDispatch } from 'react-redux';
+import { create } from '../../store/actions/function';
+import { AnyAction } from 'redux'
 
 export const Read = () => {
-  const funcionarios: any = useSelector((state: any) => state);
+  const [first, setFirst] = React.useState('');
+  const [second, setSecond] = React.useState('');
 
   const dispatch = useDispatch();
 
-  const handleAdicionarFuncionario = React.useCallback(
-    (param: any) => dispatch(createPerson(param)),
-    [dispatch],
+  const funcionarios: IMockData = useSelector(
+    (state: RootStateType) => state.reducer,
   );
 
-  const [first, setfirst] = React.useState('');
+  const blabla = (person: any) => {
 
-  const handleChange = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    const aaa = {
-      name: first,
-    };
-
-    handleAdicionarFuncionario(aaa);
+    dispatch(create(person) as any);
   };
 
-  console.log(funcionarios.reducer.state?.map((item: any) => item.name));
+  const handleChange = (event: FormEvent) => {
+    event.preventDefault();
+
+    const bla = {
+      cpf: '',
+      name: second,
+      city: first,
+      state: '',
+      id: '',
+    };
+
+    blabla(bla)
+
+    console.log(bla);
+  };
 
   return (
     <>
@@ -55,10 +69,16 @@ export const Read = () => {
 
       <form onSubmit={handleChange}>
         <input
-          name="Nome"
-          placeholder="Nome Completo"
+          name="nome"
+          placeholder="Nome"
           value={first}
-          onChange={({ target }) => setfirst(target.value)}
+          onChange={({ target }) => setFirst(target.value)}
+        />
+        <input
+          name="cidade"
+          placeholder="cidade"
+          value={second}
+          onChange={({ target }) => setSecond(target.value)}
         />
 
         <button type="submit">Salvar</button>
@@ -77,8 +97,8 @@ export const Read = () => {
             </tr>
           </thead>
 
-           <tbody>
-            {funcionarios.reducer.state?.map((item: any) => (
+          <tbody>
+            {funcionarios.person?.map((item) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
@@ -104,7 +124,7 @@ export const Read = () => {
                 </td>
               </tr>
             ))}
-          </tbody> 
+          </tbody>
         </table>
       </section>
     </>

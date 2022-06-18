@@ -1,13 +1,19 @@
-import { mock } from '../mock';
-import { create_Person, initialActionType } from '../types';
+// -------------------------------------------------
+// Mock
+// -------------------------------------------------
+import { IMockInitial } from '../mock';
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
+import { ActionType, InitialActionType } from '../types';
 
-export function reducer(state = mock, action: initialActionType) {
+export const reducer = (state = IMockInitial, action: InitialActionType) => {
   switch (action.type) {
-    case create_Person:
+    case ActionType.CREATE_PERSON:
       return {
         state: [...state.person, action.person],
       };
     default:
       return state;
   }
-}
+};

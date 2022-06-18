@@ -1,6 +1,9 @@
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
 import { IMockData } from '../types';
 
-export const mock: IMockData = {
+export const IMockInitial: IMockData = {
   person: [
     {
       cpf: '999.888.777-66',
