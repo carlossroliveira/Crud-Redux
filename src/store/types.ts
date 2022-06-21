@@ -7,13 +7,14 @@ import { rootReducer } from '.';
 // Types
 // -------------------------------------------------
 export interface IMockData {
-  person: {
-    cpf?: string;
-    name?: string;
-    city?: string;
-    state?: string;
-    id?: string;
-  }[];
+  person: separateObject[];
+}
+export interface separateObject {
+  cpf?: string;
+  name?: string;
+  city?: string;
+  state?: string;
+  id?: string;
 }
 
 export enum ActionType {
@@ -24,15 +25,15 @@ export enum ActionType {
 
 export interface ICreatePerson {
   type: typeof ActionType.CREATE_PERSON;
-  payload: IMockData;
+  payload: separateObject;
 }
 export interface IEditPerson {
   type: typeof ActionType.EDIT_PERSON;
-  payload: IMockData;
+  payload: separateObject;
 }
 export interface IDeletePerson {
   type: typeof ActionType.DELETE_PERSON;
-  payload: IMockData;
+  payload: separateObject;
 }
 
 export type InitialActionType = ICreatePerson | IEditPerson | IDeletePerson;

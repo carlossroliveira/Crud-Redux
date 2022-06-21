@@ -11,7 +11,7 @@ export const reducer = (state = IMockInitial, action: InitialActionType) => {
   switch (action.type) {
     case ActionType.CREATE_PERSON:
       return {
-        state: [...state.person, action.person],
+        person: [...state.person, action.payload],
       };
     default:
       return state;

@@ -3,13 +3,9 @@
 // -------------------------------------------------
 import { Dispatch } from 'redux';
 
-import { ActionType, IMockData, InitialActionType } from '../types';
+import { ActionType, InitialActionType, separateObject } from '../types';
 
-export const createPerson = () => {
-  return { type: ActionType.CREATE_PERSON };
-};
-
-export const create = (value: IMockData) => {
+export const create = (value: separateObject) => {
   return (dispatch: Dispatch<InitialActionType>) => {
     dispatch({
       type: ActionType.CREATE_PERSON,
@@ -18,19 +14,12 @@ export const create = (value: IMockData) => {
   };
 };
 
-/* export function createPerson(person: IMockData) {
-  const action: actionTypes.createPerson = {
-    type: create_Person,
-    person,
+/* export const createkkkkk = (value: IMockData) => {
+  return (dispatch: Dispatch<InitialActionType>) => {
+    dispatch({
+      type: ActionType.CREATE_PERSON,
+      payload: value,
+    });
   };
-  return (dispatch: AppDispatch) => dispatch(action);
-}
- */
-/* export function createPerson(person: any) {
-  const action: any = {
-    type: CREATE_PERSON,
-    person,
-  };
-  return action;
-}
+};
  */

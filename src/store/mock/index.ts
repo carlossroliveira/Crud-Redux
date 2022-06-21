@@ -12,7 +12,7 @@ export const IMockInitial: IMockData = {
       state: 'Florida0',
       id: '0',
     },
-    {
+/*     {
       cpf: '999.888.777-66',
       name: 'Jayson',
       city: 'Ontario',
@@ -46,6 +46,6 @@ export const IMockInitial: IMockData = {
       city: 'Ontario',
       state: 'Florida5',
       id: '5',
-    },
+    }, */
   ],
 };

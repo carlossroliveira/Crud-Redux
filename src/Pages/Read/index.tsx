@@ -8,6 +8,9 @@ import { FiEdit, FiSave, FiTrash2 } from 'react-icons/fi';
 // -------------------------------------------------
 // Components
 // -------------------------------------------------
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actions } from '../../store/actions/index';
 import { NamePage } from '../../components/NamePage';
 // -------------------------------------------------
 // Styles
@@ -16,11 +19,12 @@ import styles from './read.module.scss';
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
-import { IMockData, InitialActionType, RootStateType } from '../../store/types';
-
-import { useDispatch } from 'react-redux';
-import { create } from '../../store/actions/function';
-import { AnyAction } from 'redux'
+import {
+  IMockData,
+  InitialActionType,
+  RootStateType,
+  separateObject,
+} from '../../store/types';
 
 export const Read = () => {
   const [first, setFirst] = React.useState('');
@@ -28,29 +32,24 @@ export const Read = () => {
 
   const dispatch = useDispatch();
 
-  const funcionarios: IMockData = useSelector(
+  const information: IMockData = useSelector(
     (state: RootStateType) => state.reducer,
   );
 
-  const blabla = (person: any) => {
-
-    dispatch(create(person) as any);
-  };
+  const { create } = bindActionCreators(actions, dispatch);
 
   const handleChange = (event: FormEvent) => {
     event.preventDefault();
 
-    const bla = {
+    const person: separateObject = {
       cpf: '',
-      name: second,
-      city: first,
+      name: first,
+      city: second,
       state: '',
-      id: '',
+      id: `${information.person.length + 1}`,
     };
 
-    blabla(bla)
-
-    console.log(bla);
+    create(person);
   };
 
   return (
@@ -98,9 +97,9 @@ export const Read = () => {
           </thead>
 
           <tbody>
-            {funcionarios.person?.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
+            {information.person?.map((item, index) => (
+              <tr key={index + 1}>
+                <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.cpf}</td>
                 <td>{item.state}</td>
