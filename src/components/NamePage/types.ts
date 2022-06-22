@@ -1,3 +1,6 @@
-export interface INamePage {
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
+export interface INamePageProps {
   title: string;
 }

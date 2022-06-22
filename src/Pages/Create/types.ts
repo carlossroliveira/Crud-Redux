@@ -1,6 +1,6 @@
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
-export interface ILayoutProps {
-  children: React.ReactNode;
-}
+import { ChangeEvent } from 'react'
+
+export type typingType = ChangeEvent<HTMLInputElement>

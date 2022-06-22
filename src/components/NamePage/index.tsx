@@ -5,9 +5,9 @@ import React, { useEffect } from 'react';
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
-import { INamePage } from './types';
+import { INamePageProps } from './types';
 
-export const NamePage = ({ title }: INamePage) => {
+export const NamePage = ({ title }: INamePageProps) => {
   useEffect(() => {
     document.title = `Crud - ${title}`;
   }, [title]);

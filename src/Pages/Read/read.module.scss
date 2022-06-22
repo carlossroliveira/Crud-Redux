@@ -60,6 +60,10 @@
       box-shadow: 0 2px 2px -2px $background--color-6;
       @include style_td_th;
 
+      a {
+        color: $background--color-7;
+      }
+
       &:hover:last-child {
         font-weight: bold;
         background-color: $background--color-2;
@@ -76,6 +80,9 @@
 
         .table__div__button {
           color: $background--color-1;
+          a {
+            color: $background--color-1;
+          }
         }
       }
     }
