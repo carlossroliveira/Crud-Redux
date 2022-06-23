@@ -1,10 +1,10 @@
 // -------------------------------------------------
 // Packages
 // -------------------------------------------------
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { IoCreateOutline } from 'react-icons/io5';
 import { MdSystemUpdateAlt } from 'react-icons/md';
+import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineRead, AiOutlineDelete } from 'react-icons/ai';
 // -------------------------------------------------
 // Styles
@@ -16,12 +16,16 @@ import styles from './aside.module.scss';
 import { stylesTypes } from './types';
 
 export const Aside = () => {
+  const location = useLocation();
+
   const [value, setValue] = useState<stylesTypes>('/');
 
-  const stylesFcOne = () => setValue('/');
-  const stylesFcTwo = () => setValue('/Create');
-  const stylesFcThree = () => setValue('/Update');
-  const stylesFcFour = () => setValue('/Delete');
+  useEffect(() => {
+    if (location.pathname === '/') setValue('/');
+    if (location.pathname === '/Create') setValue('/Create');
+    if (location.pathname === '/Update') setValue('/Update');
+    if (location.pathname === '/Delete') setValue('/Delete');
+  }, [location]);
 
   return (
     <div className={styles.container}>
@@ -35,7 +39,6 @@ export const Aside = () => {
           className={`${styles.container__div__main} ${
             value === '/' && styles.visible
           }`}
-          onClick={() => stylesFcOne()}
         >
           <Link to="/">
             <div className={styles.container__div}>
@@ -49,7 +52,6 @@ export const Aside = () => {
           className={`${styles.container__div__main} ${
             value === '/Create' && styles.visible
           }`}
-          onClick={() => stylesFcTwo()}
         >
           <Link to="/Create">
             <div className={styles.container__div}>
@@ -63,7 +65,6 @@ export const Aside = () => {
           className={`${styles.container__div__main} ${
             value === '/Update' && styles.visible
           }`}
-          onClick={() => stylesFcThree()}
         >
           <Link to="/Update">
             <div className={styles.container__div}>
@@ -77,7 +78,6 @@ export const Aside = () => {
           className={`${styles.container__div__main} ${
             value === '/Delete' && styles.visible
           }`}
-          onClick={() => stylesFcFour()}
         >
           <Link to="/Delete">
             <div className={styles.container__div}>

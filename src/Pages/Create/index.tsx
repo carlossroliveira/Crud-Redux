@@ -3,24 +3,31 @@
 // -------------------------------------------------
 import React, { FormEvent } from 'react';
 import { bindActionCreators } from 'redux';
+import { useNavigate } from 'react-router-dom';
 import { actions } from '../../store/actions/index';
 import { useDispatch, useSelector } from 'react-redux';
+
 // -------------------------------------------------
 // Components
 // -------------------------------------------------
 import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
 import { NamePage } from '../../components/NamePage';
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------
-import './kk.css';
+import styles from './create.module.scss';
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
-import { IMockData, RootStateType, separateObject } from '../../store/types';
 import { typingType } from './types';
+import { IMockData, RootStateType, separateObject } from '../../store/types';
 
+import Swal from 'sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss';
 export const Create = () => {
+  const NAVIGATION = useNavigate();
+
   const information: IMockData = useSelector(
     (state: RootStateType) => state.reducer,
   );
@@ -57,41 +64,61 @@ export const Create = () => {
     setCpf('');
     setCity('');
     setState('');
+
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: 'success',
+      title: 'Registration done',
+    });
+
+    setTimeout(() => {
+      NAVIGATION('/');
+    }, 3000);
   };
 
   return (
     <div>
       <NamePage title="Create" />
 
+      <form onSubmit={handleSubmit}>
+        <section className={styles.section__main}>
+          <div className={styles.div__main}>
+            <Input
+              name="Name: "
+              value={name}
+              onChange={handleChange.actionName}
+            />
+            <Input name="CPF: " value={cpf} onChange={handleChange.actionCpf} />
+          </div>
 
+          <div className={styles.div__main}>
+            <Input
+              name="City: "
+              value={city}
+              onChange={handleChange.actionCity}
+            />
 
-        <form onSubmit={handleSubmit}>
-        <Input
-          name="Name: "
-          value={name}
-          onChange={handleChange.actionName}
-        />
+            <Input
+              name="State: "
+              value={state}
+              onChange={handleChange.actionState}
+            />
+          </div>
+        </section>
 
-        <Input
-          name="CPF: "
-          value={cpf}
-          onChange={handleChange.actionCpf}
-        />
-
-        <Input
-          name="City: "
-          value={city}
-          onChange={handleChange.actionCity}
-        />
-
-        <Input
-          name="State: "
-          value={state}
-          onChange={handleChange.actionState}
-        />
-
-        <button type="submit">Salvar</button>
-      </form> 
+        <Button text="Salvar" />
+      </form>
     </div>
   );
 };

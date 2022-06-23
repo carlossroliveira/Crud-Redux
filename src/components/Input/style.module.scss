@@ -1,80 +1,80 @@
+@import '../../styles/variables';
+
 input[type=text] {
-  box-sizing: border-box;
-  font: 15px/24px Lato, Arial, sans-serif;
-  color: #333;
   width: 100%;
-  box-sizing: border-box;
-  letter-spacing: 1px;
   text-indent: 50px;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  color: $background--color-7;
+  font: 15px/24px 'Roboto', sans-serif;
 }
 :focus {
   outline: 0;
 }
-.col3 {
-
+.input__div {
   margin: 40px 3%;
   position: relative;
 }
-.effect20 {
-  border: 1px solid #ccc;
-  padding: 7px 14px;
+.effect {
   transition: .4s;
   background: 0 0;
+  padding: 7px 14px;
+  border: 1px solid #ccc;
 }
-.effect20~.focusBorder:after, .effect20~.focusBorder:before {
+.effect~.focusBorder:after, .effect~.focusBorder:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #4caf50;
   transition: .3s;
+  background-color: $background--color-5;
 }
-.effect20~.focusBorder:after {
+.effect~.focusBorder:after {
   top: auto;
   bottom: 0;
   left: auto;
   right: 0;
 }
-.effect20~.focusBorder i:after, .effect20~.focusBorder i:before {
+.effect~.focusBorder i:after, .effect~.focusBorder i:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 2px;
   height: 0;
-  background-color: #4caf50;
+  width: 2px;
   transition: .4s;
+  background-color: $background--color-5;
 }
-.effect20~.focusBorder i:after {
+.effect~.focusBorder i:after {
   left: auto;
   right: 0;
   top: auto;
   bottom: 0;
 }
-.effect20:focus~.focusBorder:after, .effect20:focus~.focusBorder:before, .has-content.effect20~.focusBorder:after, .has-content.effect20~.focusBorder:before {
+.effect:focus~.focusBorder:after, .effect:focus~.focusBorder:before, .has-content.effect~.focusBorder:after, .has-content.effect~.focusBorder:before {
   width: 100%;
   transition: .3s;
 }
-.effect20:focus~.focusBorder i:after, .effect20:focus~.focusBorder i:before, .has-content.effect20~.focusBorder i:after, .has-content.effect20~.focusBorder i:before {
+.effect:focus~.focusBorder i:after, .effect:focus~.focusBorder i:before, .has-content.effect~.focusBorder i:after, .has-content.effect~.focusBorder i:before {
   height: 100%;
   transition: .4s;
 }
-.effect20 ~ label {
+.effect ~ label {
   position: absolute;
   left: 14px;
   width: 100%;
   top: 10px;
-  color: red;
+  color: $background--color-2;
   transition: .3s;
   z-index: -1;
   letter-spacing: .5px;
 }
-.effect20:focus~label, .has-content.effect20~label {
+.effect:focus~label, .has-content.effect~label {
   top: -18px;
   left: 0;
   font-size: 12px;
-  color: #4caf50;
+  color: $background--color-2;
   transition: .3s;
 }

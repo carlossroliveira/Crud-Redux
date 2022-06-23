@@ -14,14 +14,14 @@ import { IInputProps } from './types';
 export const Input = (props: IInputProps) => {
   return (
     <>
-      <div className={style.col3}>
+      <div className={style.input__div}>
         <input
           required
           name={props.name}
           value={props.value}
           onChange={props.onChange}
           placeholder={props.placeholder}
-          className={style.effect20}
+          className={style.effect}
           type="text"
         />
         <label>{props.name}</label>
