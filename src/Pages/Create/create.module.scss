@@ -1,8 +1,17 @@
-.section__main {
-  display: flex;
-  justify-content: center;
+.div {
+  margin: 1rem 8rem 0 8rem;
+  padding: 1rem 0 2rem 0;
 
-  .div__main {
-    width: 15rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  .section__main {
+    display: flex;
+    justify-content: center;
+
+    .div__main {
+      width: 15rem;
+    }
   }
 }

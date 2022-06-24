@@ -11,6 +11,9 @@
 
   .container__first {
     position: relative;
+    .title {
+      font-size: 2rem;
+    }
     .formGroup {
       position: relative;
       padding: 20px 0 0;

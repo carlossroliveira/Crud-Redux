@@ -88,7 +88,7 @@ export const Create = () => {
   };
 
   return (
-    <div>
+    <div className={styles.div}>
       <NamePage title="Create" />
 
       <form onSubmit={handleSubmit}>
