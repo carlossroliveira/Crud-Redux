@@ -33,13 +33,13 @@ export const Create = () => {
   );
 
   const [name, setName] = React.useState('');
-  const [cpf, setCpf] = React.useState('');
+  const [cep, setCep] = React.useState('');
   const [city, setCity] = React.useState('');
   const [state, setState] = React.useState('');
 
   const handleChange = {
     actionName: ({ target }: typingType) => setName(target.value),
-    actionCpf: ({ target }: typingType) => setCpf(target.value),
+    actionCep: ({ target }: typingType) => setCep(target.value),
     actionCity: ({ target }: typingType) => setCity(target.value),
     actionState: ({ target }: typingType) => setState(target.value),
   };
@@ -52,7 +52,7 @@ export const Create = () => {
 
     const person: separateObject = {
       name: name,
-      cpf: cpf,
+      cep: cep,
       city: city,
       state: state,
       id: `${information.person.length + 1}`,
@@ -61,7 +61,7 @@ export const Create = () => {
     create(person);
 
     setName('');
-    setCpf('');
+    setCep('');
     setCity('');
     setState('');
 
@@ -99,7 +99,7 @@ export const Create = () => {
               value={name}
               onChange={handleChange.actionName}
             />
-            <Input name="CPF: " value={cpf} onChange={handleChange.actionCpf} />
+            <Input name="CEP: " value={cep} onChange={handleChange.actionCep} />
           </div>
 
           <div className={styles.div__main}>

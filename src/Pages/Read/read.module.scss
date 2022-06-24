@@ -18,13 +18,27 @@
     padding: 1rem 0 2rem 0;
 
     .container__div__item {
-      background-color: $background--color-6;
-      color: $background--color-1;
-      padding: 1rem 5rem;
+      position: relative;
       font-weight: bold;
+      padding: 1rem 5rem;
+      color: $background--color-1;
+
+      background: rgb(39, 145, 92);
+      background: linear-gradient(
+        232deg,
+        rgba(39, 145, 92, 1) 64%,
+        rgba(23, 23, 23, 1) 64%
+      );
 
       &:not(:last-child) {
         margin-right: 22px;
+      }
+
+      .container__info__title {
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+        position: absolute;
       }
     }
 

@@ -6,7 +6,7 @@ import { IMockData } from '../types';
 export const IMockInitial: IMockData = {
   person: [
     {
-      cpf: '999.888.777-66',
+      cep: '41800-000',
       name: 'Jayson',
       city: 'Ontario',
       state: 'Florida0',

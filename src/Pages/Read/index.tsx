@@ -30,10 +30,22 @@ export const Read = () => {
       <div className={styles.container__div}>
         <h1 className={styles.container__div__title}>Overview</h1>
         <section className={styles.container__div__section}>
-          <div className={styles.container__div__item}>NOME</div>
-          <div className={styles.container__div__item}>CPF</div>
-          <div className={styles.container__div__item}>CIDADE</div>
-          <div className={styles.container__div__item}>ESTADO</div>
+          <div className={styles.container__div__item}>
+            <span className={styles.container__info__title}>[ NAME ]</span>
+            <span>{information.person?.map((item) => item.name).at(-1)}</span>
+          </div>
+          <div className={styles.container__div__item}>
+            <span className={styles.container__info__title}>[ CEP ]</span>
+            <span>{information.person?.map((item) => item.cep).at(-1)}</span>
+          </div>
+          <div className={styles.container__div__item}>
+            <span className={styles.container__info__title}>[ CITY ]</span>
+            <span>{information.person?.map((item) => item.city).at(-1)}</span>
+          </div>
+          <div className={styles.container__div__item}>
+            <span className={styles.container__info__title}>[ STATE ]</span>
+            <span>{information.person?.map((item) => item.state).at(-1)}</span>
+          </div>
         </section>
       </div>
 
@@ -42,11 +54,11 @@ export const Read = () => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>NOME</th>
-              <th>CPF</th>
-              <th>CIDADE</th>
-              <th>ESTADO</th>
-              <th>AÇÕES</th>
+              <th>NAME</th>
+              <th>CEP</th>
+              <th>CITY</th>
+              <th>STATE</th>
+              <th>ACTIONS</th>
             </tr>
           </thead>
 
@@ -55,7 +67,7 @@ export const Read = () => {
               <tr key={index + 1}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
-                <td>{item.cpf}</td>
+                <td>{item.cep}</td>
                 <td>{item.city}</td>
                 <td>{item.state}</td>
                 <td>
