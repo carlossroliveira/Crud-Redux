@@ -1,7 +1,7 @@
 // -------------------------------------------------
 // Packages
 // -------------------------------------------------
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // -------------------------------------------------
 // Components
@@ -13,11 +13,14 @@ import { Update } from '../Pages/Update';
 import { Delete } from '../Pages/Delete';
 
 export const RoutesComponent = () => {
+  // Search filter
+  const [filter, setFilter] = useState('');
+
   return (
     <BrowserRouter>
-      <Layout>
+      <Layout filter={filter} setFilter={setFilter}>
         <Routes>
-          <Route path="/" element={<Read />} />
+          <Route path="/" element={<Read filter={filter} />} />
           <Route path="/Create" element={<Create />} />
           <Route path="/Update" element={<Update />} />
           <Route path="/Delete" element={<Delete />} />

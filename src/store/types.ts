@@ -22,7 +22,6 @@ export enum ActionType {
   EDIT_PERSON = 'edit_Person',
   DELETE_PERSON = 'delete_person',
 }
-
 export interface ICreatePerson {
   type: typeof ActionType.CREATE_PERSON;
   payload: separateObject;

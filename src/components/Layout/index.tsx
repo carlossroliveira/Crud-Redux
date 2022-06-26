@@ -19,14 +19,14 @@ import styles from './layout.module.scss';
 // -------------------------------------------------
 import { ILayoutProps } from './types';
 
-export const Layout = ({ children }: ILayoutProps) => {
+export const Layout = (props: ILayoutProps) => {
   return (
     <div className={styles.container}>
       <StyleOne />
       <StyleTwo />
       <Aside />
-      <Header />
-      <Content>{children}</Content>
+      <Header filter={props.filter} setFilter={props.setFilter} />
+      <Content>{props.children}</Content>
     </div>
   );
 };

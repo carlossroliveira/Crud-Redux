@@ -1,7 +1,7 @@
 // -------------------------------------------------
 // Packages
 // -------------------------------------------------
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FiEdit, FiTrash2 } from 'react-icons/fi';
@@ -16,12 +16,20 @@ import styles from './read.module.scss';
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
+import { IReadProps } from './types';
 import { IMockData, RootStateType } from '../../store/types';
 
-export const Read = () => {
+export const Read = (props: IReadProps) => {
   const information: IMockData = useSelector(
     (state: RootStateType) => state.reducer,
   );
+
+  const informationFilter = useMemo(() => {
+    const lowerInformation = props.filter.toLowerCase();
+    return information.person.filter((item) =>
+      item.name?.toLowerCase().includes(lowerInformation),
+    );
+  }, [props.filter]);
 
   return (
     <>
@@ -63,7 +71,7 @@ export const Read = () => {
           </thead>
 
           <tbody>
-            {information.person?.map((item, index) => (
+            {informationFilter?.map((item, index) => (
               <tr key={index + 1}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>

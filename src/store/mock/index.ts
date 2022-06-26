@@ -7,45 +7,31 @@ export const IMockInitial: IMockData = {
   person: [
     {
       cep: '41800-000',
-      name: 'Jayson',
+      name: 'Harry',
       city: 'Ontario',
       state: 'Florida0',
       id: '0',
     },
-/*     {
-      cpf: '999.888.777-66',
-      name: 'Jayson',
-      city: 'Ontario',
-      state: 'Florida1',
+    {
+      cep: '41800-000',
+      name: 'Happy',
+      city: 'Salvavador',
+      state: 'Florida0',
       id: '1',
     },
     {
-      cpf: '999.888.777-66',
-      name: 'Jayson',
+      cep: '41800-000',
+      name: 'Stiven',
       city: 'Ontario',
-      state: 'Florida2',
+      state: 'Florida0',
       id: '2',
     },
     {
-      cpf: '999.888.777-66',
-      name: 'Jayson',
+      cep: '41800-000',
+      name: 'bia',
       city: 'Ontario',
-      state: 'Florida3',
+      state: 'Florida0',
       id: '3',
     },
-    {
-      cpf: '999.888.777-66',
-      name: 'Jayson',
-      city: 'Ontario',
-      state: 'Florida4',
-      id: '4',
-    },
-    {
-      cpf: '999.888.777-66',
-      name: 'Jayson',
-      city: 'Ontario',
-      state: 'Florida5',
-      id: '5',
-    }, */
   ],
 };

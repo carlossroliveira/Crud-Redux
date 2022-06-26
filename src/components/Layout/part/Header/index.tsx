@@ -1,17 +1,25 @@
 // -------------------------------------------------
 // Packages
 // -------------------------------------------------
-import React, { useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import img from '../../../../assets/user.jpg';
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------
 import styles from './header.module.scss';
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
+import { IHeaderProps } from './types';
 
-export const Header = () => {
+export const Header = (props: IHeaderProps) => {
   const location = useLocation();
   const [value, setValue] = useState<string>('');
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    props.setFilter(event.target.value);
+  };
 
   useEffect(() => {
     if (location.pathname === '/') setValue('/');
@@ -31,6 +39,8 @@ export const Header = () => {
                 className={styles.formField}
                 placeholder="Search person"
                 name="name"
+                value={props.filter}
+                onChange={handleChange}
               />
               <label htmlFor="name" className={styles.formLabel}>
                 Search person

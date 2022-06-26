@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 import { useNavigate } from 'react-router-dom';
 import { actions } from '../../store/actions/index';
 import { useDispatch, useSelector } from 'react-redux';
-
 // -------------------------------------------------
 // Components
 // -------------------------------------------------
@@ -22,9 +21,8 @@ import styles from './create.module.scss';
 // -------------------------------------------------
 import { typingType } from './types';
 import { IMockData, RootStateType, separateObject } from '../../store/types';
+import { Toast } from '../../function/Toast';
 
-import Swal from 'sweetalert2';
-import 'sweetalert2/src/sweetalert2.scss';
 export const Create = () => {
   const NAVIGATION = useNavigate();
 
@@ -65,22 +63,7 @@ export const Create = () => {
     setCity('');
     setState('');
 
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer);
-        toast.addEventListener('mouseleave', Swal.resumeTimer);
-      },
-    });
-
-    Toast.fire({
-      icon: 'success',
-      title: 'Registration done',
-    });
+    Toast('success', 'Registration done');
 
     setTimeout(() => {
       NAVIGATION('/');
@@ -90,7 +73,6 @@ export const Create = () => {
   return (
     <div className={styles.div}>
       <NamePage title="Create" />
-
       <form onSubmit={handleSubmit}>
         <section className={styles.section__main}>
           <div className={styles.div__main}>
