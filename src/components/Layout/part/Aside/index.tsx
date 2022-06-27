@@ -2,11 +2,14 @@
 // Packages
 // -------------------------------------------------
 import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+// -------------------------------------------------
+// Icons
+// -------------------------------------------------
 import { IoCreateOutline } from 'react-icons/io5';
 import { MdSystemUpdateAlt } from 'react-icons/md';
-import { Link, useLocation } from 'react-router-dom';
-import { AiOutlineRead, AiOutlineDelete } from 'react-icons/ai';
 import { TbLockOff, TbLockOpen } from 'react-icons/tb';
+import { AiOutlineRead, AiOutlineDelete } from 'react-icons/ai';
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------
@@ -14,30 +17,37 @@ import styles from './aside.module.scss';
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
-import { stylesTypes } from './types';
+import {
+  CREATE,
+  DELETE,
+  READ,
+  stylesTypes,
+  UPDATE,
+  UPDATE_LIST,
+} from './types';
 
 export const Aside = () => {
   const location = useLocation();
 
-  const [value, setValue] = useState<stylesTypes>('/');
+  const [value, setValue] = useState<stylesTypes>(READ);
 
-  const updatee =
-    location.pathname !== '/' &&
-    location.pathname !== '/Create' &&
-    location.pathname !== '/Update' &&
-    location.pathname !== '/Delete';
+  const path =
+    location.pathname !== READ &&
+    location.pathname !== CREATE &&
+    location.pathname !== UPDATE &&
+    location.pathname !== DELETE;
 
   useEffect(() => {
-    if (location.pathname === '/') setValue('/');
-    if (location.pathname === '/Create') setValue('/Create');
-    if (location.pathname === '/Update') setValue('/Update');
+    if (location.pathname === READ) setValue(READ);
+    if (location.pathname === CREATE) setValue(CREATE);
+    if (location.pathname === UPDATE) setValue(UPDATE);
     if (
-      location.pathname !== '/' &&
-      location.pathname !== '/Create' &&
-      location.pathname !== '/Delete'
+      location.pathname !== READ &&
+      location.pathname !== CREATE &&
+      location.pathname !== DELETE
     )
-      setValue(`/Update/list/`);
-    if (location.pathname === '/Delete') setValue('/Delete');
+      setValue(UPDATE_LIST);
+    if (location.pathname === DELETE) setValue(DELETE);
   }, [location]);
 
   return (
@@ -50,10 +60,10 @@ export const Aside = () => {
       <section className={styles.container__section}>
         <div
           className={`${styles.container__div__main} ${
-            value === '/' && styles.visible
+            value === READ && styles.visible
           }`}
         >
-          <Link to="/">
+          <Link to={READ}>
             <div className={styles.container__div}>
               <AiOutlineRead />
               Read
@@ -63,10 +73,10 @@ export const Aside = () => {
 
         <div
           className={`${styles.container__div__main} ${
-            value === '/Create' && styles.visible
+            value === CREATE && styles.visible
           }`}
         >
-          <Link to="/Create">
+          <Link to={CREATE}>
             <div className={styles.container__div}>
               <IoCreateOutline />
               Create
@@ -76,14 +86,14 @@ export const Aside = () => {
 
         <div
           className={`${styles.container__div__main} ${
-            value === '/Update/list/' && styles.visible
+            value === UPDATE_LIST && styles.visible
           }`}
         >
-          <Link to="/Update">
+          <Link to={UPDATE}>
             <div className={styles.container__div}>
               <MdSystemUpdateAlt />
               Update
-              {updatee ? (
+              {path ? (
                 <span className={styles.icon__open}>
                   <TbLockOpen />
                 </span>
@@ -98,10 +108,10 @@ export const Aside = () => {
 
         <div
           className={`${styles.container__div__main} ${
-            value === '/Delete' && styles.visible
+            value === DELETE && styles.visible
           }`}
         >
-          <Link to="/Delete">
+          <Link to={DELETE}>
             <div className={styles.container__div}>
               <AiOutlineDelete />
               Delete

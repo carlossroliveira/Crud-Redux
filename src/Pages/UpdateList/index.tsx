@@ -8,15 +8,19 @@ import { useParams } from 'react-router-dom';
 // Components
 // -------------------------------------------------
 import { NamePage } from '../../components/NamePage';
-import { IMockData, RootStateType } from '../../store/types';
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------
 
-export const List = () => {
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
+import { IMockData, RootStateType } from '../../store/types';
+
+export const UpdateList = () => {
   const params = useParams();
 
-  const [first, setfirst] = React.useState<any>();
+  const [first, setFirst] = React.useState<any>();
 
   const information: IMockData = useSelector(
     (state: RootStateType) => state.reducer,
@@ -26,7 +30,7 @@ export const List = () => {
     const selectedUser = information.person.find(
       (item) => item.id === params.id,
     );
-    setfirst(selectedUser);
+    setFirst(selectedUser);
   }, []);
 
   /* console.log(params) */

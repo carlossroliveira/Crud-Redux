@@ -12,6 +12,7 @@ import styles from './header.module.scss';
 // Types
 // -------------------------------------------------
 import { IHeaderProps } from './types';
+import { CREATE, DELETE, READ, UPDATE, UPDATE_LIST } from '../Aside/types';
 
 export const Header = (props: IHeaderProps) => {
   const location = useLocation();
@@ -22,16 +23,22 @@ export const Header = (props: IHeaderProps) => {
   };
 
   useEffect(() => {
-    if (location.pathname === '/') setValue('/');
-    if (location.pathname === '/Create') setValue('Create');
-    if (location.pathname === '/Update') setValue('Update');
-    if (location.pathname === '/Delete') setValue('Delete');
+    if (location.pathname === READ) setValue(READ);
+    if (location.pathname === CREATE) setValue(CREATE);
+    if (location.pathname === UPDATE) setValue(UPDATE);
+    if (location.pathname === DELETE) setValue(DELETE);
+    if (
+      location.pathname !== READ &&
+      location.pathname !== CREATE &&
+      location.pathname !== DELETE
+    )
+      setValue(UPDATE_LIST);
   }, [location]);
 
   return (
     <>
       <section className={styles.container}>
-        {value === '/' && (
+        {value === READ && (
           <div className={styles.container__first}>
             <div className={`${styles.formGroup} ${styles.field}`}>
               <input
@@ -49,7 +56,7 @@ export const Header = (props: IHeaderProps) => {
           </div>
         )}
 
-        {value === 'Create' && (
+        {value === CREATE && (
           <div className={styles.container__first}>
             <div className={styles.title}>
               <h1>Registration</h1>
@@ -57,7 +64,7 @@ export const Header = (props: IHeaderProps) => {
           </div>
         )}
 
-        {value === 'Update' && (
+        {value === UPDATE && (
           <div className={styles.container__first}>
             <div className={styles.title}>
               <h1>Edit</h1>
@@ -65,7 +72,15 @@ export const Header = (props: IHeaderProps) => {
           </div>
         )}
 
-        {value === 'Delete' && (
+        {value === UPDATE_LIST && (
+          <div className={styles.container__first}>
+            <div className={styles.title}>
+              <h1>Edit</h1>
+            </div>
+          </div>
+        )}
+
+        {value === DELETE && (
           <div className={styles.container__first}>
             <div className={styles.title}>
               <h1>Delete</h1>

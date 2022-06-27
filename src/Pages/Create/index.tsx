@@ -100,7 +100,7 @@ export const Create = () => {
           </div>
         </section>
 
-        <Button text="Salvar" />
+        <Button text="Save" />
       </form>
     </div>
   );

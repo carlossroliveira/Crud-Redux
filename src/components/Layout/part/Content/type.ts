@@ -1,6 +1,7 @@
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
+import { ReactNode } from 'react';
 export interface IContentProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
