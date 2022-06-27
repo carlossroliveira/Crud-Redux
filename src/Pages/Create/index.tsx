@@ -73,6 +73,7 @@ export const Create = () => {
   return (
     <div className={styles.div}>
       <NamePage title="Create" />
+
       <form onSubmit={handleSubmit}>
         <section className={styles.section__main}>
           <div className={styles.div__main}>

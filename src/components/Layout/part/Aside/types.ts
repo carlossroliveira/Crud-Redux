@@ -1,1 +1,6 @@
-export type stylesTypes = '/' | '/Create' | '/Update' | '/Delete';
+export type stylesTypes =
+  | '/'
+  | '/Create'
+  | '/Update'
+  | '/Update/list/'
+  | '/Delete';

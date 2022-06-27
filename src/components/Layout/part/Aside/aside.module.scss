@@ -19,6 +19,8 @@
     margin-top: 5rem;
 
     .container__div__main {
+      position: relative;
+
       a {
         font-size: 20px;
         font-weight: bold;
@@ -30,6 +32,29 @@
         font-size: 20px;
         margin-right: 5px;
         color: $background--color-5;
+      }
+
+      .icon__close {
+        svg {
+          color: #dbe5e4;
+          padding: 1px;
+          position: absolute;
+          top: 5px;
+          right: 1rem;
+          background-color: #f44c56;
+          border-radius: 50%;
+        }
+      }
+      .icon__open {
+        svg {
+          color: #dbe5e4;
+          padding: 1px;
+          position: absolute;
+          top: 5px;
+          right: 1rem;
+          background-color: #27915c;
+          border-radius: 50%;
+        }
       }
     }
 

@@ -2,9 +2,6 @@
 // Packages
 // -------------------------------------------------
 import React from 'react';
-// -------------------------------------------------
-// Components
-// -------------------------------------------------
 import { NamePage } from '../../components/NamePage';
 // -------------------------------------------------
 // Styles
@@ -12,9 +9,12 @@ import { NamePage } from '../../components/NamePage';
 
 export const Update = () => {
   return (
-    <div>
+    <>
       <NamePage title="Update" />
-      Update
-    </div>
+
+      <h1>Modulo bloequeado</h1>
+
+      <p>Edite um usuario primeiro</p>
+    </>
   );
 };

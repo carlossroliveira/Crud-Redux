@@ -17,7 +17,7 @@ import styles from './read.module.scss';
 // Types
 // -------------------------------------------------
 import { IReadProps } from './types';
-import { IMockData, RootStateType } from '../../store/types';
+import { IMockData, RootStateType, separateObject } from '../../store/types';
 
 export const Read = (props: IReadProps) => {
   const information: IMockData = useSelector(
@@ -40,19 +40,35 @@ export const Read = (props: IReadProps) => {
         <section className={styles.container__div__section}>
           <div className={styles.container__div__item}>
             <span className={styles.container__info__title}>[ NAME ]</span>
-            <span>{information.person?.map((item) => item.name).at(-1)}</span>
+            <span>
+              {information.person
+                ?.map((item: separateObject) => item.name)
+                .at(-1)}
+            </span>
           </div>
           <div className={styles.container__div__item}>
             <span className={styles.container__info__title}>[ CEP ]</span>
-            <span>{information.person?.map((item) => item.cep).at(-1)}</span>
+            <span>
+              {information.person
+                ?.map((item: separateObject) => item.cep)
+                .at(-1)}
+            </span>
           </div>
           <div className={styles.container__div__item}>
             <span className={styles.container__info__title}>[ CITY ]</span>
-            <span>{information.person?.map((item) => item.city).at(-1)}</span>
+            <span>
+              {information.person
+                ?.map((item: separateObject) => item.city)
+                .at(-1)}
+            </span>
           </div>
           <div className={styles.container__div__item}>
             <span className={styles.container__info__title}>[ STATE ]</span>
-            <span>{information.person?.map((item) => item.state).at(-1)}</span>
+            <span>
+              {information.person
+                ?.map((item: separateObject) => item.state)
+                .at(-1)}
+            </span>
           </div>
         </section>
       </div>
@@ -71,7 +87,7 @@ export const Read = (props: IReadProps) => {
           </thead>
 
           <tbody>
-            {informationFilter?.map((item, index) => (
+            {informationFilter?.map((item: separateObject, index: number) => (
               <tr key={index + 1}>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
@@ -81,7 +97,7 @@ export const Read = (props: IReadProps) => {
                 <td>
                   <div className={styles.table__div}>
                     <button className={styles.table__div__button}>
-                      <Link to={`/Update/${item.id}`}>
+                      <Link to={`/Update/list/${item.id}`}>
                         <FiEdit />
                       </Link>
                     </button>
