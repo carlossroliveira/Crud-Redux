@@ -16,7 +16,6 @@ export const Input = (props: IInputProps) => {
     <>
       <div className={style.input__div}>
         <input
-          required
           name={props.name}
           value={props.value}
           onChange={props.onChange}

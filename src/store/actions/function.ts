@@ -14,12 +14,11 @@ export const create = (value: separateObject) => {
   };
 };
 
-/* export const createkkkkk = (value: IMockData) => {
+export const edit = (value: separateObject) => {
   return (dispatch: Dispatch<InitialActionType>) => {
     dispatch({
-      type: ActionType.CREATE_PERSON,
+      type: ActionType.EDIT_PERSON,
       payload: value,
     });
   };
 };
- */

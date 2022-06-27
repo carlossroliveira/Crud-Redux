@@ -13,6 +13,13 @@ export const reducer = (state = IMockInitial, action: InitialActionType) => {
       return {
         person: [...state.person, action.payload],
       };
+    case ActionType.EDIT_PERSON:
+      return {
+        person: state.person.map((item) =>
+          item.id === action.payload.id ? action.payload : item,
+        ),
+      };
+
     default:
       return state;
   }

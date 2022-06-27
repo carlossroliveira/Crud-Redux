@@ -1,7 +1,7 @@
 // -------------------------------------------------
 // Packages
 // -------------------------------------------------
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { useNavigate } from 'react-router-dom';
 import { actions } from '../../store/actions/index';
@@ -30,10 +30,10 @@ export const Create = () => {
     (state: RootStateType) => state.reducer,
   );
 
-  const [name, setName] = React.useState('');
-  const [cep, setCep] = React.useState('');
-  const [city, setCity] = React.useState('');
-  const [state, setState] = React.useState('');
+  const [name, setName] = useState('');
+  const [cep, setCep] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
 
   const handleChange = {
     actionName: ({ target }: typingType) => setName(target.value),
