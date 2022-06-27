@@ -30,6 +30,7 @@ export const Header = (props: IHeaderProps) => {
     if (
       location.pathname !== READ &&
       location.pathname !== CREATE &&
+      location.pathname !== UPDATE &&
       location.pathname !== DELETE
     )
       setValue(UPDATE_LIST);
@@ -67,7 +68,7 @@ export const Header = (props: IHeaderProps) => {
         {value === UPDATE && (
           <div className={styles.container__first}>
             <div className={styles.title}>
-              <h1>Edit</h1>
+              <h1>Edit Blocked</h1>
             </div>
           </div>
         )}
@@ -75,7 +76,7 @@ export const Header = (props: IHeaderProps) => {
         {value === UPDATE_LIST && (
           <div className={styles.container__first}>
             <div className={styles.title}>
-              <h1>Edit</h1>
+              <h1>Edit Unlocked</h1>
             </div>
           </div>
         )}

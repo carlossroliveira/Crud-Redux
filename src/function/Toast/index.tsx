@@ -8,13 +8,14 @@ import 'sweetalert2/src/sweetalert2.scss';
 // -------------------------------------------------
 import { InitialType } from './types';
 
-export const Toast = (message: InitialType, title: string) => {
+export const Toast = ( timer: number,message: InitialType, title: string) => {
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
     showConfirmButton: false,
-    timer: 3000,
+    timer: timer,
     timerProgressBar: true,
+    color: '#171717',
   });
 
   Toast.fire({

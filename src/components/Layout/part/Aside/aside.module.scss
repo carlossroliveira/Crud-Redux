@@ -4,7 +4,7 @@
   top: 5px;
   right: 1rem;
   padding: 1px;
-  color: #dbe5e4;
+  color: $background--color-4;
   position: absolute;
   border-radius: 50%;
 }
@@ -47,13 +47,13 @@
       .icon__close {
         svg {
           @include svgDefault;
-          background-color: #f44c56;
+          background-color: $background--color-8;
         }
       }
       .icon__open {
         svg {
           @include svgDefault;
-          background-color: #27915c;
+          background-color: $background--color-5
         }
       }
     }

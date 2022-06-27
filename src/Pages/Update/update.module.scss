@@ -1,0 +1,38 @@
+@import '../../../src/styles/variables';
+
+.section {
+  text-align: center;
+  margin: 4rem auto 0;
+
+  padding: 2rem 1rem;
+  width: 50rem;
+  transition: filter 0.2s;
+
+  box-shadow: rgba(112, 189, 162, 0.4) 5px 5px,
+    rgba(112, 189, 162, 0.3) 10px 10px, rgba(112, 189, 162, 0.2) 15px 15px,
+    rgba(112, 189, 162, 0.1) 20px 20px, rgba(112, 189, 162, 0.05) 25px 25px;
+
+  position: relative;
+
+  &:hover {
+    filter: brightness(0.8);
+
+    &::after {
+      content: 'Blocked';
+      position: absolute;
+      top: 3rem;
+      width: 13px;
+      right: 8rem;
+      opacity: 0.1;
+      font-size: 30px;
+    }
+  }
+
+  .section__title {
+    text-align: start;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+    color: $background--color-8;
+  }
+}

@@ -63,7 +63,7 @@ export const Create = () => {
     setCity('');
     setState('');
 
-    Toast('success', 'Registration done');
+    Toast(3000, 'success', 'Registration done');
 
     setTimeout(() => {
       NAVIGATION('/');

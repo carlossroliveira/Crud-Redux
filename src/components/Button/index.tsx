@@ -13,7 +13,7 @@ import { IButtonProps } from './types';
 
 export const Button = (props: IButtonProps) => {
   return (
-    <button className={styles.button} role="button">
+    <button className={`${styles.button} ${props.className}`} role="button">
       {props.text}
     </button>
   );
