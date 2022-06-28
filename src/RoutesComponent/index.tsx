@@ -17,6 +17,7 @@ import { DeleteList } from '../Pages/DeleteList'
 export const RoutesComponent = () => {
   // Search filter
   const [filter, setFilter] = useState('');
+ 
   return (
     <BrowserRouter>
       <Layout filter={filter} setFilter={setFilter}>
