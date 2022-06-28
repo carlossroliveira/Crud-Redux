@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // -------------------------------------------------
 // Components
 // -------------------------------------------------
+import { Toast } from '../../function/Toast';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { NamePage } from '../../components/NamePage';
@@ -21,14 +22,11 @@ import styles from './create.module.scss';
 // -------------------------------------------------
 import { typingType } from './types';
 import { IMockData, RootStateType, separateObject } from '../../store/types';
-import { Toast } from '../../function/Toast';
 
 export const Create = () => {
   const NAVIGATION = useNavigate();
 
-  const information: IMockData = useSelector(
-    (state: RootStateType) => state.reducer,
-  );
+  const information: IMockData = useSelector((state: RootStateType) => state.reducer);
 
   const [name, setName] = useState('');
   const [cep, setCep] = useState('');

@@ -12,6 +12,7 @@ import { Read } from '../Pages/Read';
 import { Update } from '../Pages/Update';
 import { Delete } from '../Pages/Delete';
 import { UpdateList } from '../Pages/UpdateList';
+import { DeleteList } from '../Pages/DeleteList'
 
 export const RoutesComponent = () => {
   // Search filter
@@ -25,6 +26,7 @@ export const RoutesComponent = () => {
           <Route path="/Update" element={<Update />} />
           <Route path="/Update/list/:id" element={<UpdateList />} />
           <Route path="/Delete" element={<Delete />} />
+          <Route path="/Delete/info/:id" element={<DeleteList />} />
           {/* <Route path="*" element={} /> ROTA INEXISTENTE */}
         </Routes>
       </Layout>

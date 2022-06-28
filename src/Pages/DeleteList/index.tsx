@@ -16,7 +16,7 @@ import { NamePage } from '../../components/NamePage';
 // -------------------------------------------------
 // Styles
 // -------------------------------------------------
-import styles from './updateList.module.scss';
+import styles from './deleteList.module.scss';
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
@@ -24,7 +24,7 @@ import { typingType } from '../Create/types';
 import { IMockData, RootStateType, separateObject } from '../../store/types';
 
 
-export const UpdateList = () => {
+export const DeleteList = () => {
   const params = useParams();
   const NAVIGATION = useNavigate();
 
@@ -79,7 +79,7 @@ export const UpdateList = () => {
 
   return (
     <>
-      <NamePage title="Update" />
+      <NamePage title="Delete" />
 
       <section className={styles.section}>
         <form onSubmit={handleOnSubmit}>

@@ -2,7 +2,7 @@
 // Packages
 // -------------------------------------------------
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import img from '../../../../assets/user.jpg';
 // -------------------------------------------------
 // Styles
@@ -12,7 +12,14 @@ import styles from './header.module.scss';
 // Types
 // -------------------------------------------------
 import { IHeaderProps } from './types';
-import { CREATE, DELETE, READ, UPDATE, UPDATE_LIST } from '../Aside/types';
+import {
+  CREATE,
+  DELETE,
+  DELETE_INFO,
+  READ,
+  UPDATE,
+  UPDATE_LIST,
+} from '../Aside/types';
 
 export const Header = (props: IHeaderProps) => {
   const location = useLocation();
@@ -23,17 +30,18 @@ export const Header = (props: IHeaderProps) => {
   };
 
   useEffect(() => {
+    /* if (
+      location.pathname !== READ &&
+      location.pathname !== CREATE &&
+      location.pathname !== UPDATE &&
+      location.pathname !== DELETE &&
+      location.pathname !== DELETE_INFO
+    )
+      setValue(UPDATE_LIST); */
     if (location.pathname === READ) setValue(READ);
     if (location.pathname === CREATE) setValue(CREATE);
     if (location.pathname === UPDATE) setValue(UPDATE);
     if (location.pathname === DELETE) setValue(DELETE);
-    if (
-      location.pathname !== READ &&
-      location.pathname !== CREATE &&
-      location.pathname !== UPDATE &&
-      location.pathname !== DELETE
-    )
-      setValue(UPDATE_LIST);
   }, [location]);
 
   return (
@@ -73,18 +81,30 @@ export const Header = (props: IHeaderProps) => {
           </div>
         )}
 
-        {value === UPDATE_LIST && (
-          <div className={styles.container__first}>
-            <div className={styles.title}>
-              <h1>Edit Unlocked</h1>
+        {location.pathname !== READ &&
+          location.pathname !== CREATE &&
+          location.pathname !== UPDATE &&
+          location.pathname !== DELETE &&
+          location.pathname !== DELETE_INFO && (
+            <div className={styles.container__first}>
+              <div className={styles.title}>
+                <h1>Edit Unlocked</h1>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
         {value === DELETE && (
           <div className={styles.container__first}>
             <div className={styles.title}>
-              <h1>Delete</h1>
+              <h1>Delete Blocked</h1>
+            </div>
+          </div>
+        )}
+
+        {value === DELETE_INFO && (
+          <div className={styles.container__first}>
+            <div className={styles.title}>
+              <h1>Delete Unlocked</h1>
             </div>
           </div>
         )}

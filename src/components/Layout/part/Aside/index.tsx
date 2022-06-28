@@ -20,6 +20,7 @@ import styles from './aside.module.scss';
 import {
   CREATE,
   DELETE,
+  DELETE_INFO,
   READ,
   stylesTypes,
   UPDATE,
@@ -41,13 +42,14 @@ export const Aside = () => {
     if (location.pathname === READ) setValue(READ);
     if (location.pathname === CREATE) setValue(CREATE);
     if (location.pathname === UPDATE) setValue(UPDATE);
-    if (
+    if (location.pathname === DELETE) setValue(DELETE);
+    /* if (
       location.pathname !== READ &&
       location.pathname !== CREATE &&
       location.pathname !== DELETE
     )
-      setValue(UPDATE_LIST);
-    if (location.pathname === DELETE) setValue(DELETE);
+      setValue(UPDATE_LIST); */
+    
   }, [location]);
 
   return (
@@ -105,7 +107,7 @@ export const Aside = () => {
             </div>
           </Link>
         </div>
-
+    
         <div
           className={`${styles.container__div__main} ${
             value === DELETE && styles.visible

@@ -103,7 +103,9 @@ export const Read = (props: IReadProps) => {
                     </button>
 
                     <button className={styles.table__div__button}>
-                      <FiTrash2 />
+                      <Link to={`/Delete/info/${item.id}`}>
+                        <FiTrash2 />
+                      </Link>
                     </button>
                   </div>
                 </td>
