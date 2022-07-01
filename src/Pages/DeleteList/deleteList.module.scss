@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+
+.div__main {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+  .section__main {
+    width: 50rem;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem 0 3rem;
+    text-align: center;
+
+    .div__primary {
+      padding: 1rem;
+      font-size: 20px;
+      margin: 40px 3%;
+      display: flex;
+      justify-content: space-evenly;
+      border: 2px solid;
+
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(0.8);
+        color: $background--color-3;
+      }
+
+      .id__span__key {
+        font-weight: 700;
+        color: $background--color-2;
+      }
+
+      .id__span {
+        font-weight: 700;
+        color: $background--color-7;
+        margin-left: 10px;
+      }
+    }
+
+    .button {
+      width: 30rem;
+    }
+  }
+}
