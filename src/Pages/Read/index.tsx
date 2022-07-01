@@ -89,7 +89,7 @@ export const Read = (props: IReadProps) => {
           <tbody>
             {informationFilter?.map((item: separateObject, index: number) => (
               <tr key={index + 1}>
-                <td>{index + 1}</td>
+                <td>{Number(item.id) + 1}</td>
                 <td>{item.name}</td>
                 <td>{item.cep}</td>
                 <td>{item.city}</td>

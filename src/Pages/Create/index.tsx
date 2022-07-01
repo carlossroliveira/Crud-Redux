@@ -41,7 +41,7 @@ export const Create = () => {
   };
 
   const dispatch = useDispatch();
-  const { create } = bindActionCreators(actions, dispatch);
+  const { createItem } = bindActionCreators(actions, dispatch);
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -54,7 +54,7 @@ export const Create = () => {
       id: `${information.person.length + 1}`,
     };
 
-    create(person);
+    createItem(person);
 
     setName('');
     setCep('');

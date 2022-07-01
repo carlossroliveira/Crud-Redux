@@ -32,7 +32,7 @@ export const UpdateList = () => {
   );
 
   const dispatch = useDispatch();
-  const { edit } = bindActionCreators(actions, dispatch);
+  const { editItem } = bindActionCreators(actions, dispatch);
 
   const [name, setName] = useState('');
   const [cep, setCep] = useState('');
@@ -70,7 +70,7 @@ export const UpdateList = () => {
       id: params.id,
     };
 
-    edit(data);
+    editItem(data);
 
     Toast(3000, 'success', 'Edit done');
 
