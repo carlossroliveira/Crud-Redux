@@ -98,7 +98,7 @@ export const Create = () => {
           </div>
         </section>
 
-        <Button text="Save" />
+        <Button text="Save" className={styles.button} />
       </form>
     </div>
   );
