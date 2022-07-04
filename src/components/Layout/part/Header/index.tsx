@@ -29,6 +29,7 @@ export const Header = (props: IHeaderProps) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     props.setFilter(event.target.value);
   };
+  
 
   useEffect(() => {
     if (location.pathname === READ) setValue(READ);
@@ -131,7 +132,7 @@ export const Header = (props: IHeaderProps) => {
         {value === ERROR && (
           <div className={styles.container__first}>
             <div className={styles.title}>
-              <h1>Error</h1>
+              <h1>Error 404</h1>
             </div>
           </div>
         )}

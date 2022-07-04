@@ -1,0 +1,21 @@
+.section__main {
+  position: relative;
+  max-width: 73rem;
+  margin: auto;
+
+  .image {
+    width: 35rem;
+    margin: auto;
+    display: block;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .page_404 {
+    top: 19rem;
+    right: 30rem;
+    position: absolute;
+  }
+}
