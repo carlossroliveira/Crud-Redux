@@ -5,7 +5,7 @@ import { IMockInitial } from '../mock';
 // -------------------------------------------------
 // Types
 // -------------------------------------------------
-import { ActionType, InitialActionType } from '../types';
+import { ActionType, InitialActionType, separateObject } from '../types';
 
 export const reducer = (state = IMockInitial, action: InitialActionType) => {
   switch (action.type) {
@@ -16,14 +16,16 @@ export const reducer = (state = IMockInitial, action: InitialActionType) => {
 
     case ActionType.EDIT_PERSON:
       return {
-        person: state.person.map((item) =>
+        person: state.person.map((item: separateObject) =>
           item.id === action.payload.id ? action.payload : item,
         ),
       };
 
     case ActionType.DELETE_PERSON:
       return {
-        person: state.person.filter((item) => item.id !== action.payload.id),
+        person: state.person.filter(
+          (item: separateObject) => item.id !== action.payload.id,
+        ),
       };
 
     default:

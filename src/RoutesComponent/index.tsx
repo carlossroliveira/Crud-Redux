@@ -12,12 +12,13 @@ import { Read } from '../Pages/Read';
 import { Update } from '../Pages/Update';
 import { Delete } from '../Pages/Delete';
 import { UpdateList } from '../Pages/UpdateList';
-import { DeleteList } from '../Pages/DeleteList'
+import { DeleteList } from '../Pages/DeleteList';
+import { Error } from '../Pages/Error';
 
 export const RoutesComponent = () => {
   // Search filter
   const [filter, setFilter] = useState('');
- 
+
   return (
     <BrowserRouter>
       <Layout filter={filter} setFilter={setFilter}>
@@ -28,7 +29,7 @@ export const RoutesComponent = () => {
           <Route path="/Update/list/:id" element={<UpdateList />} />
           <Route path="/Delete" element={<Delete />} />
           <Route path="/Delete/info/:id" element={<DeleteList />} />
-          {/* <Route path="*" element={} /> ROTA INEXISTENTE */}
+          <Route path="*" element={<Error />} />
         </Routes>
       </Layout>
     </BrowserRouter>

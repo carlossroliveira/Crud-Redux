@@ -16,6 +16,7 @@ import {
   CREATE,
   DELETE,
   DELETE_INFO,
+  ERROR,
   READ,
   UPDATE,
   UPDATE_LIST,
@@ -34,6 +35,14 @@ export const Header = (props: IHeaderProps) => {
     if (location.pathname === CREATE) setValue(CREATE);
     if (location.pathname === UPDATE) setValue(UPDATE);
     if (location.pathname === DELETE) setValue(DELETE);
+
+    if (
+      location.pathname !== READ &&
+      location.pathname !== CREATE &&
+      location.pathname !== UPDATE &&
+      location.pathname !== DELETE
+    )
+      setValue(ERROR);
 
     if (location.pathname === `${UPDATE_LIST}0`) setValue(UPDATE_LIST);
     if (location.pathname === `${UPDATE_LIST}1`) setValue(UPDATE_LIST);
@@ -115,6 +124,14 @@ export const Header = (props: IHeaderProps) => {
           <div className={styles.container__first}>
             <div className={styles.title}>
               <h1>Delete Unlocked</h1>
+            </div>
+          </div>
+        )}
+
+        {value === ERROR && (
+          <div className={styles.container__first}>
+            <div className={styles.title}>
+              <h1>Error</h1>
             </div>
           </div>
         )}

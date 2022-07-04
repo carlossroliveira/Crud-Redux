@@ -1,8 +1,10 @@
 // -------------------------------------------------
-// Types
+// Packages
 // -------------------------------------------------
 import { Dispatch } from 'redux';
-
+// -------------------------------------------------
+// Types
+// -------------------------------------------------
 import { ActionType, InitialActionType, separateObject } from '../types';
 
 export const createItem = (value: separateObject) => {
