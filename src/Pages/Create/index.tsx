@@ -28,10 +28,10 @@ export const Create = () => {
 
   const information: IMockData = useSelector((state: RootStateType) => state.reducer);
 
-  const [name, setName] = useState('');
-  const [cep, setCep] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
+  const [name, setName] = useState<string>('');
+  const [cep, setCep] = useState<string>('');
+  const [city, setCity] = useState<string>('');
+  const [state, setState] = useState<string>('');
 
   const handleChange = {
     actionName: ({ target }: typingType) => setName(target.value),

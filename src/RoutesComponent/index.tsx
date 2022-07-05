@@ -29,7 +29,7 @@ export const RoutesComponent = () => {
           <Route path="/Update/list/:id" element={<UpdateList />} />
           <Route path="/Delete" element={<Delete />} />
           <Route path="/Delete/info/:id" element={<DeleteList />} />
-          <Route path="*" element={<Error />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
       </Layout>
     </BrowserRouter>

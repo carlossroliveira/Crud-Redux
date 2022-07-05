@@ -32,10 +32,10 @@ export const DeleteList = () => {
   const dispatch = useDispatch();
   const { deleteItem } = bindActionCreators(actions, dispatch);
 
-  const [name, setName] = useState('');
-  const [cep, setCep] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
+  const [name, setName] = useState<string>('');
+  const [cep, setCep] = useState<string>('');
+  const [city, setCity] = useState<string>('');
+  const [state, setState] = useState<string>('');
 
   useEffect(() => {
     const selectPerson: separateObject | undefined = information.person?.find(

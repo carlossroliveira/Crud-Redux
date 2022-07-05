@@ -21,6 +21,7 @@ import {
   CREATE,
   DELETE,
   DELETE_INFO,
+  ERROR,
   READ,
   stylesTypes,
   UPDATE,
@@ -36,6 +37,7 @@ export const Aside = () => {
     location.pathname !== READ &&
     location.pathname !== CREATE &&
     location.pathname !== UPDATE &&
+    location.pathname !== ERROR &&
     location.pathname !== DELETE;
 
   const pathOne =
