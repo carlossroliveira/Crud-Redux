@@ -11,7 +11,7 @@ import { reducer } from './reducers/reducer';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer } from 'redux-persist';
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   reducer,
 });
 
