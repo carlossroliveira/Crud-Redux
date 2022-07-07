@@ -28,7 +28,7 @@ export const IMockInitial: IMockData = {
     },
     {
       cep: '41370-200',
-      name: 'Paula ',
+      name: 'Paula',
       city: 'Manaus',
       state: 'Amazonas',
       id: '3',
