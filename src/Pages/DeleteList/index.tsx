@@ -94,7 +94,7 @@ export const DeleteList = () => {
                 </div>
 
                 <div>
-                  <span className={styles.id__span__key}>zipCode:</span>
+                  <span className={styles.id__span__key}>ZipCode:</span>
                   <span className={styles.id__span}>{zipCode}</span>
                 </div>
               </div>
