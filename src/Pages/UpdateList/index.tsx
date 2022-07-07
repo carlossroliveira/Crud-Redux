@@ -92,7 +92,7 @@ export const UpdateList = () => {
               onChange={handleChange.actionName}
             />
 
-            <Input name="zipCode: " value={zipCode} onChange={handleChange.actionzipCode} />
+            <Input name="Zip: " value={zipCode} onChange={handleChange.actionzipCode} />
 
             <Input
               name="City: "
