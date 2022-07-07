@@ -33,7 +33,7 @@ export const DeleteList = () => {
   const { deleteItem } = bindActionCreators(actions, dispatch);
 
   const [name, setName] = useState<string>('');
-  const [cep, setCep] = useState<string>('');
+  const [zipCode, setzipCode] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [state, setState] = useState<string>('');
 
@@ -44,7 +44,7 @@ export const DeleteList = () => {
 
     if (selectPerson) {
       setName(selectPerson?.name as SetStateAction<string>);
-      setCep(selectPerson?.cep as SetStateAction<string>);
+      setzipCode(selectPerson?.zipCode as SetStateAction<string>);
       setCity(selectPerson?.city as SetStateAction<string>);
       setState(selectPerson?.state as SetStateAction<string>);
     }
@@ -55,7 +55,7 @@ export const DeleteList = () => {
 
     const data: separateObject = {
       name: name,
-      cep: cep,
+      zipCode: zipCode,
       city: city,
       state: state,
       id: params.id,
@@ -94,8 +94,8 @@ export const DeleteList = () => {
                 </div>
 
                 <div>
-                  <span className={styles.id__span__key}>CEP:</span>
-                  <span className={styles.id__span}>{cep}</span>
+                  <span className={styles.id__span__key}>zipCode:</span>
+                  <span className={styles.id__span}>{zipCode}</span>
                 </div>
               </div>
 

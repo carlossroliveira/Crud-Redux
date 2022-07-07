@@ -26,16 +26,18 @@ import { IMockData, RootStateType, separateObject } from '../../store/types';
 export const Create = () => {
   const NAVIGATION = useNavigate();
 
-  const information: IMockData = useSelector((state: RootStateType) => state.reducer);
+  const information: IMockData = useSelector(
+    (state: RootStateType) => state.reducer,
+  );
 
   const [name, setName] = useState<string>('');
-  const [cep, setCep] = useState<string>('');
+  const [zipCode, setzipCode] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [state, setState] = useState<string>('');
 
   const handleChange = {
     actionName: ({ target }: typingType) => setName(target.value),
-    actionCep: ({ target }: typingType) => setCep(target.value),
+    actionzipCode: ({ target }: typingType) => setzipCode(target.value),
     actionCity: ({ target }: typingType) => setCity(target.value),
     actionState: ({ target }: typingType) => setState(target.value),
   };
@@ -48,7 +50,7 @@ export const Create = () => {
 
     const person: separateObject = {
       name: name,
-      cep: cep,
+      zipCode: zipCode,
       city: city,
       state: state,
       id: `${information.person.length + 1}`,
@@ -57,7 +59,7 @@ export const Create = () => {
     createItem(person);
 
     setName('');
-    setCep('');
+    setzipCode('');
     setCity('');
     setState('');
 
@@ -80,7 +82,11 @@ export const Create = () => {
               value={name}
               onChange={handleChange.actionName}
             />
-            <Input name="CEP: " value={cep} onChange={handleChange.actionCep} />
+            <Input
+              name="Zip:  "
+              value={zipCode}
+              onChange={handleChange.actionzipCode}
+            />
           </div>
 
           <div className={styles.div__main}>

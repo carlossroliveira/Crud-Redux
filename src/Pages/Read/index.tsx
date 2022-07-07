@@ -47,10 +47,10 @@ export const Read = (props: IReadProps) => {
             </span>
           </div>
           <div className={styles.container__div__item}>
-            <span className={styles.container__info__title}>[ CEP ]</span>
+            <span className={styles.container__info__title}>[ ZIPCODE ]</span>
             <span>
               {information.person
-                ?.map((item: separateObject) => item.cep)
+                ?.map((item: separateObject) => item.zipCode)
                 .at(-1)}
             </span>
           </div>
@@ -79,7 +79,7 @@ export const Read = (props: IReadProps) => {
             <tr>
               <th>ID</th>
               <th>NAME</th>
-              <th>CEP</th>
+              <th>ZIPCODE</th>
               <th>CITY</th>
               <th>STATE</th>
               <th>ACTIONS</th>
@@ -91,7 +91,7 @@ export const Read = (props: IReadProps) => {
               <tr key={index + 1}>
                 <td>{Number(item.id) + 1}</td>
                 <td>{item.name}</td>
-                <td>{item.cep}</td>
+                <td>{item.zipCode}</td>
                 <td>{item.city}</td>
                 <td>{item.state}</td>
                 <td>

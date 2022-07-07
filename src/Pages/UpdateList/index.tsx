@@ -35,13 +35,13 @@ export const UpdateList = () => {
   const { editItem } = bindActionCreators(actions, dispatch);
 
   const [name, setName] = useState('');
-  const [cep, setCep] = useState('');
+  const [zipCode, setZipCode] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
 
   const handleChange = {
     actionName: ({ target }: typingType) => setName(target.value),
-    actionCep: ({ target }: typingType) => setCep(target.value),
+    actionzipCode: ({ target }: typingType) => setZipCode(target.value),
     actionCity: ({ target }: typingType) => setCity(target.value),
     actionState: ({ target }: typingType) => setState(target.value),
   };
@@ -53,7 +53,7 @@ export const UpdateList = () => {
 
     if (selectPerson) {
       setName(selectPerson?.name as SetStateAction<string>);
-      setCep(selectPerson?.cep as SetStateAction<string>);
+      setZipCode(selectPerson?.zipCode as SetStateAction<string>);
       setCity(selectPerson?.city as SetStateAction<string>);
       setState(selectPerson?.state as SetStateAction<string>);
     }
@@ -64,7 +64,7 @@ export const UpdateList = () => {
 
     const data: separateObject = {
       name: name,
-      cep: cep,
+      zipCode: zipCode,
       city: city,
       state: state,
       id: params.id,
@@ -92,7 +92,7 @@ export const UpdateList = () => {
               onChange={handleChange.actionName}
             />
 
-            <Input name="CEP: " value={cep} onChange={handleChange.actionCep} />
+            <Input name="zipCode: " value={zipCode} onChange={handleChange.actionzipCode} />
 
             <Input
               name="City: "

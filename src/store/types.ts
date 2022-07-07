@@ -9,7 +9,7 @@ export interface IMockData {
   person: separateObject[];
 }
 export interface separateObject {
-  cep?: string;
+  zipCode?: string;
   name?: string;
   city?: string;
   state?: string;
