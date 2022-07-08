@@ -31,7 +31,7 @@ $ npm start
 ![GitHub](https://img.shields.io/badge/-GitHub-212121?style=flat-square&logo=GitHub&logoColor=white)
 ![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=React&logoColor=2F74C0)
 ![Sass](https://img.shields.io/badge/-Sass-C76494?style=flat-square&logo=Sass&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-white?style=flat-square&logo=TypeScript&logoColor=2F74C0)
+![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=TypeScript&logoColor=white)
 ![Redux](https://img.shields.io/badge/-redux-white?style=flat-square&logo=redux&logoColor=2F74C0)
 
 
